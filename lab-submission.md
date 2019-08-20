@@ -68,81 +68,70 @@ Follow the steps below to register and sign up for the course on Autograder.
 
 ### TODO(Meling) Fix instructions
 
-This section offers step-by-step instructions on how to hand in
-Lab 1. Please refer to the workflow described below also for future labs unless
-otherwise noted.
+This section give step-by-step instructions on how to submit assignments.
 
-1. You will have access to two repositories when you have signed up on
-   Autograder. The first is the `labs` repository, which is where we will
-   publish all lab assignments, skeleton code and additional information
-   needed. You only have read access to this repository. The second repository
-   is your own repository named `username-labs`, where `username` is your
-   GitHub username. You have write access to this repository. Your answers to
-   the assignments should be pushed here.
+1. You will get access to two repositories when you have signed up on Autograder. 
+   The first is the [`assignments`](https://github.com/dat320-2019/assignments)
+   repository, which is where we will publish all lab assignments, skeleton code
+   and additional information related to the assignments. You will only have read
+   access to this repository, and its content may change throughout the semester,
+   as we add new labs or fix problems. 
+   The second repository is your own repository named `username-labs`, where
+   `username` is your GitHub username. You will have write access to this
+   repository. Your solution to the assignments should be pushed here.
 
-2. There are several ways to get the `labs` repo. Below we describe two options.
+2. To get the [`assignments`](https://github.com/dat320-2019/assignments) repo,
+   first decide on a suitable location for your workspace; we will use 
+   `$HOME/dat320-2019` in the following:
+    1. `mkdir $HOME/dat320-2019`
+    2. `cd $HOME/dat320-2019`
+    3. `git clone https://github.com/dat320-2019/assignments.git`
+    4. You will be asked for your GitHub user name and password
 
-3. (Option 1) Using just the `git` command on the command line.
-    1. `ls -la $GOPATH` (make sure that this is a real directory)
-    2. `mkdir -p $GOPATH/src/github.com/dat320-2019`
-    3. `cd $GOPATH/src/github.com/dat320-2019`
-    4. `git clone https://github.com/dat320-2019/assignments.git`
-    5. You will be asked for your GitHub user name and password
-    6. Continue in Step 6 below
+3. To avoid having to type your password every time, follow these
+   [steps](https://github.com/dat320-2019/course-info/blob/master/github-ssh.md)
+   to set up SSH for GitHub authentication.
 
-4. (Option 2) Using the `go get` command on the command line.
-    1. `ls -la $GOPATH` (make sure that this is a real directory)
-    2. `go get github.com/dat320-2019/assignments`
-    3. You will be asked for your GitHub user name and password
-    4. (ignore the warning message about no buildable Go files)
-    5. Continue in Step 6 below
-
-5. (Advanced Option) Advanced users: Follow these [steps](https://github.com/dat320-2019/course-info/blob/master/github-ssh.md) if you want to use SSH for GitHub authentication. This will help avoid having to type your password every time.
-
-6. (Information) Both Option 1 or 2 above will clone the original `labs` git
-   repo (not your copy of it.) This means that you don't need to
-   change the import path in the source files to use your own repository's
-   path. That is, when you make a commit and push to submit your handin, you
-   don't have to change this back to the original import path.
-
-7. Now we need to set up your own remote so that you can make changes and push
-   those changes to your own copy of the repo. Follow these instructions:
-    1. `cd $GOPATH/src/github.com/dat320-2019/assignments`.
+4. Now we need to set up your own remote so that you can make changes and push
+   those changes to your own copy of the `assignments` repo. Follow these instructions:
+    1. `cd $HOME/dat320-2019/assignments`
     2. `git remote add labs https://github.com/dat320-2019/username-labs`
-     where `username` should be replaced with your own GitHub username.
+    where `username` must be replaced with your own GitHub username.
     3. The above command adds your own `username-labs` repository as a remote
-   repository on your local machine. This means that once you've modified some
-   files and committed the changes locally, you can run:
+    repository on your local machine. This means that once you've modified some
+    files and committed the changes locally, you can run:
     4. `git push labs` to have them pushed up to your own `username-labs` repository on GitHub.
 
-8. If you make changes to your own `username-labs` repository using the GitHub
+5. If you make changes to your own `username-labs` repository using the GitHub
    web interface, and want to pull those changes down to your own computer, you
    can run the command:
     * `git pull labs master`
-    * In later labs, you will work in groups. This approach is also the way that you can download (pull) your group's code changes from GitHub, assuming that another group member has previously pushed it out to GitHub.
+    * In later labs, you will work in groups. This approach is also the way that
+    you can download (pull) your group's code changes from GitHub, assuming that
+    another group member has previously pushed it out to GitHub.
 
-9. As time goes by we (the teaching staff) may publish updates to the
+6. As time goes by we (the teaching staff) may publish updates to the
    original `labs` repo, e.g. new or updated lab assignments. To see these
    updates, you will need to run the following command:
     * `git pull origin master`.
 
-10. For the first lab, you will submit the source code for the hello world
+7. (NOT YET FIXED; CONTINUE FIXING HERE) For the first lab, you will submit the source code for the hello world
    application and the answers to the three sets of questions. The skeleton code
    for the application, `hello.c`, has been provided along with forms for the
    questions. Autograder will run a set of test cases to verify your
    implementation. Not all tests must pass to get a passing grade.
 
-11. In the following, we will use `hello.c` as an example. Change directory to:
-   `cd $GOPATH/src/github.com/dat320-2019/assignments/lab1` and confirm that the files
+8. In the following, we will use `hello.c` as an example. Change directory to:
+   `cd $HOME/src/github.com/dat320-2019/assignments/lab1` and confirm that the files
    for lab1 resides in that folder. They should, assuming that you ran the `go
    get` command earlier.
 
-12. Implement the main function in `hello.c`.
+9. Implement the main function in `hello.c`.
 
-13. When your application is working, you may push your code to GitHub. This will
+10. When your application is working, you may push your code to GitHub. This will
     trigger Autograder which will then run a test suite on your code.
 
-14. Using `hello.c` as an example, use the following
+11. Using `hello.c` as an example, use the following
     procedure to commit and push your changes to GitHub and Autograder:
 
     ```console
