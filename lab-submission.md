@@ -70,21 +70,21 @@ This section give step-by-step instructions on how to submit assignments.
 
 1. You will get access to two repositories when you have signed up on Autograder. 
    The first is the [`assignments`](https://github.com/dat320-2019/assignments)
-   repository, which is where we will publish all lab assignments, skeleton code
-   and additional information related to the assignments. You will only have read
-   access to this repository, and its content may change throughout the semester,
-   as we add new labs or fix problems. 
-   The second repository is your own repository named `username-labs`, where
-   `username` is your GitHub username. You will have write access to this
-   repository. Your solution to the assignments should be pushed here.
+   repository, which is where we publish all lab assignments, skeleton code
+   and additional information.
+   You only have read access to this repository, and its content may change
+   throughout the semester, as we add new labs or fix problems. 
+   The second is your own private repository named `username-labs`.
+   You will have write access to this repository.
+   Your solution to the assignments should be pushed here.
 
 2. To get the [`assignments`](https://github.com/dat320-2019/assignments) repo,
-   first decide on a suitable location for your workspace; we will use 
-   `$HOME/dat320-2019` in the following:
+   first decide on a suitable location for your workspace for the course.
+   We will use `$HOME/dat320-2019` in the following:
     1. `mkdir $HOME/dat320-2019`
     2. `cd $HOME/dat320-2019`
     3. `git clone https://github.com/dat320-2019/assignments.git`
-    4. You will be asked for your GitHub user name and password
+    4. You will be asked for your GitHub user name and password.
 
 3. To avoid having to type your password every time, follow these
    [steps](https://github.com/dat320-2019/course-info/blob/master/github-ssh.md)
@@ -98,7 +98,7 @@ This section give step-by-step instructions on how to submit assignments.
     3. The above command adds your own `username-labs` repository as a remote
     repository on your local machine. This means that once you've modified some
     files and committed the changes locally, you can run:
-    4. `git push labs` to have them pushed up to your own `username-labs` repository on GitHub.
+    4. `git push labs` to push your commits to your own `username-labs` repository on GitHub.
 
 5. If you make changes to your own `username-labs` repository using the GitHub
    web interface, and want to pull those changes down to your own computer, you
@@ -113,37 +113,25 @@ This section give step-by-step instructions on how to submit assignments.
    updates, you will need to run the following command:
     * `git pull origin master`.
 
-7. (NOT YET FIXED; CONTINUE FIXING HERE) For the first lab, you will submit the source code for the hello world
-   application and the answers to the three sets of questions. The skeleton code
-   for the application, `hello.c`, has been provided along with forms for the
-   questions. Autograder will run a set of test cases to verify your
-   implementation. Not all tests must pass to get a passing grade.
-
-8. In the following, we will use `hello.c` as an example. Change directory to:
-   `cd $HOME/src/github.com/dat320-2019/assignments/lab1` and confirm that the files
-   for lab1 resides in that folder. They should, assuming that you ran the `go
-   get` command earlier.
-
-9. Implement the main function in `hello.c`.
-
-10. When your application is working, you may push your code to GitHub. This will
-    trigger Autograder which will then run a test suite on your code.
-
-11. Using `hello.c` as an example, use the following
-    procedure to commit and push your changes to GitHub and Autograder:
-
+7. In summary, these are the typical steps you need to make to make changes to
+   files, add those changes to staging, commit changes and push changes to your
+   own private repository on GitHub. 
     ```console
-    $ cd $GOPATH/src/github.com/dat320-2019/assignments/lab1
-    $ git add hello.c
+    $ cd $HOME/dat320-2019/assignments/lab1
+    $ vim shell-answers.md
+    # make your edits and save
+    $ git add shell-answers.md
     $ git commit
-    // This will open an editor for you to write a commit message
-    // Use for example "Implemented Assignment 1"
+    # This will open an editor for you to write a commit message
+    # Use for example "Implemented Assignment 1"
     $ git push labs
     ```
+    Once you have pushed a change to GitHub, Autograder's built-in Continuous Integration
+    system will pick up your code and run our tests on them.
 
-15. Running the last command above will, due to an error on our part, result in
+8. Running the last command above may, due to an error on our part, result in
     Git printing an error message about a conflict between the `README.md` file
-    in the `labs` repository and the `README.md` file in your `username-labs`
+    in the `assignments` repository and the `README.md` file in your `username-labs`
     repository. Here is how to fix it:
 
     ```console
@@ -158,7 +146,7 @@ This section give step-by-step instructions on how to submit assignments.
     CONFLICT (add/add): Merge conflict in README.md
     Automatic merge failed; fix conflicts and then commit the result.
     ...
-    $ cd $GOPATH/src/github.com/dat320-2019/assignments
+    $ cd $HOME/dat320-2019/assignments
     $ vi README.md
     // Remove everything in the file, then add for example "username-labs" to the file.
     // Save and exit.
@@ -175,18 +163,18 @@ This section give step-by-step instructions on how to submit assignments.
     $ git push labs
     ```
 
-16. Autograder will now build and run a test suite on the code you submitted.
-    You can check the output by going the [Autograder web
+9. Autograder will now build and run a test suite on the code you submitted.
+    You can check the output by going to the [Autograder web
     interface](http://ag.itest.run/). The results (build log) should be
     available under "Individual - lab1". Note that the results shows output
     for all the tests in current lab assignment. You will want to focus on the
     output for the specific test results related to the task you're working on.
 
-17. Repeat step 15 for the three sets of answers.
+10. Repeat step 8 for the three sets of answers.
 
-18. If some of the autograder tests fail, you may make changes to your code/answers.
+11. If some of the autograder tests fail, you may make changes to your code/answers.
 
-19. Push your changes using `git push labs`. You should be able to view your
+12. Push your changes using `git push labs`. You should be able to view your
     results in the Autograder web interface as described earlier.
 
 ## Lab Approval
@@ -198,7 +186,7 @@ ready to show your solution, reach out to a member of the teaching staff.
 It is expected that you can explain your code and show how it works.
 You may show your solution on a lab workstation or your own
 computer. The results from Autograder will also be taken into consideration
-when approving a lab. At least 60% of the Autograder tests should pass for the
+when approving a lab. At least 80% of the Autograder tests should pass for the
 lab to be approved. A lab needs to be approved before Autograder will provide
 feedback on the next lab assignment.
 
