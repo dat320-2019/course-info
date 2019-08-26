@@ -3,7 +3,7 @@
 The steps below are meant for more experienced GitHub users. They are necessary
 when you want to use SSH instead HTTPS for GitHub authentication.
 
-1. Register your public SSH key (normally `~/.ssh/id_rsa.pub`) at
+1. Register your public SSH key (typically `~/.ssh/id_rsa.pub`) at
    [GitHub](https://github.com/settings/ssh).
 
 2. Run the following command: `git config --global
@@ -12,8 +12,6 @@ when you want to use SSH instead HTTPS for GitHub authentication.
    since it is not possible to specify the `go get` tool to use SSH
    authentication.
 
-3. Go through steps 1 to 3 in the section [Go
-   Assignments](https://github.com/uis-dat320-fall18/assignments/blob/master/lab1/README.md#go-assignments)
-   in Lab 1, but in Step 3 replace the command with `git remote add labs
-   git@github.com:uis-dat320-fall18/username-labs.git` (where `username` should be
-   replaced with your own GitHub username).
+3. Run this `git remote add labs git@github.com:dat320-2019/username-labs.git`
+   to set up the `labs` remote pointer to use ssh authentication. 
+   (`username` should be replaced with your own GitHub username).
