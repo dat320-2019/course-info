@@ -66,8 +66,6 @@ Follow the steps below to register and sign up for the course on Autograder.
 
 ## Instructions for submitting a lab assignment
 
-### TODO(Meling) Fix instructions
-
 This section give step-by-step instructions on how to submit assignments.
 
 1. You will get access to two repositories when you have signed up on Autograder. 
