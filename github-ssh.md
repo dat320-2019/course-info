@@ -15,3 +15,7 @@ when you want to use SSH instead HTTPS for GitHub authentication.
 3. Run this `git remote add labs git@github.com:dat320-2019/username-labs.git`
    to set up the `labs` remote pointer to use ssh authentication. 
    (`username` should be replaced with your own GitHub username).
+
+## Problems with Access Rights
+
+Sometimes you need to clear cache if you have other GitHub user.
