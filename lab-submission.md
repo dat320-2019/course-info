@@ -78,104 +78,104 @@ This section give step-by-step instructions on how to submit assignments.
    You will have write access to this repository.
    Your solution to the assignments should be pushed here.
 
-2. To get the [`assignments`](https://github.com/dat320-2019/assignments) repo,
-   first decide on a suitable location for your workspace for the course.
-   We will use `$HOME/dat320-2019` in the following:
-    1. `mkdir $HOME/dat320-2019`
-    2. `cd $HOME/dat320-2019`
-    3. `git clone https://github.com/dat320-2019/assignments.git`
-    4. You will be asked for your GitHub user name and password.
+2. To get started, decide on a suitable location for your workspace for the course.
+   In this guide we will use `$HOME/dat320-2019` as the workspace. Do the following
+   making sure to replace `username` with your GitHub user name:
+
+   ```console
+   mkdir $HOME/dat320-2019
+   cd $HOME/dat320-2019
+   git clone https://github.com/dat320-2019/username-labs assignments
+   cd assignments
+   git remote add labs https://github.com/dat320-2019/assignments
+   git pull labs master
+   ```
+
+   (you may be asked for username and password on GitHub above.)
 
 3. To avoid having to type your password every time, follow these
    [steps](https://github.com/dat320-2019/course-info/blob/master/github-ssh.md)
    to set up SSH for GitHub authentication.
 
-4. Now we need to set up your own remote so that you can make changes and push
-   those changes to your own copy of the `assignments` repo. Follow these instructions:
-    1. `cd $HOME/dat320-2019/assignments`
-    2. `git remote add labs https://github.com/dat320-2019/username-labs`
-    where `username` must be replaced with your own GitHub username.
-    3. The above command adds your own `username-labs` repository as a remote
-    repository on your local machine. This means that once you've modified some
-    files and committed the changes locally, you can run:
-    4. `git push labs` to push your commits to your own `username-labs` repository on GitHub.
+4. One of the most useful git commands is: `git status`. This will most often
+   be able to tell you what you should be doing with your working copy.
 
-5. If you make changes to your own `username-labs` repository using the GitHub
-   web interface, and want to pull those changes down to your own computer, you
-   can run the command:
-    * `git pull labs master`
-    * In later labs, you will work in groups. This approach is also the way that
-    you can download (pull) your group's code changes from GitHub, assuming that
-    another group member has previously pushed it out to GitHub.
+5. When working with git you typically iterate between the following steps:
+   a. Edit files
+   b. `git status` (check to see which files have changed)
+   c. `git add <edited files>`
+   d. `git status` (check that all intended files have been added to the staging area.)
+   e. `git commit`
+   f. `git status` (check that changes have been committed.)
 
-6. As time goes by we (the teaching staff) may publish updates to the
-   original `labs` repo, e.g. new or updated lab assignments. To see these
-   updates, you will need to run the following command:
-    * `git pull origin master`.
+6. You may iterate over the steps in Step 5 many times. But eventually,
+   you will want to push you changes to GitHub with the following command:
 
-7. In summary, these are the typical steps you need to make to make changes to
+   ```console
+   git push
+   ```
+   
+   Note that this will only push your committed changes!
+
+7. If you make changes to your own `username-labs` repository using the GitHub
+   web interface, and want to pull or fetch those changes down to your own
+   computer's (working copy), you can run the following commands:
+
+   ```console
+   git fetch
+   git rebase
+   ```
+
+   If there are conflicting changes, you will need to edit the files
+   with conflicts and remove the lines that should not be there, along with the
+   `>>>>`, `====`, and `<<<<<` lines.
+   
+   In later labs, you will work in groups. This approach is also the way that
+   you can download (pull) your group's code changes from GitHub, assuming that
+   another group member has previously pushed it to GitHub.
+
+8. As time goes by the teaching staff may publish updates to the
+   original [`assignments`](https://github.com/dat320-2019/assignments) repo,
+   e.g. new or updated lab assignments. To fetch and integrate these
+   updates into your own working copy, you will need to run the following commands:
+   
+   ```console
+   cd $HOME/dat320-2019/assignments
+   git pull labs master
+   ```
+
+   Once again, if there are conflicting changes, you will need to edit the files
+   with conflicts and remove the lines that should not be there, along with the
+   `>>>>`, `====`, and `<<<<<` lines.
+
+9. In summary, these are the typical steps you necessary to make changes to
    files, add those changes to staging, commit changes and push changes to your
    own private repository on GitHub. 
-    ```console
-    $ cd $HOME/dat320-2019/assignments/lab1
-    $ vim shell-answers.md
-    # make your edits and save
-    $ git add shell-answers.md
-    $ git commit
-    # This will open an editor for you to write a commit message
-    # Use for example "Implemented Assignment 1"
-    $ git push labs
-    ```
-    Once you have pushed a change to GitHub, Autograder's built-in Continuous Integration
-    system will pick up your code and run our tests on them.
 
-8. Running the last command above may, due to an error on our part, result in
-    Git printing an error message about a conflict between the `README.md` file
-    in the `assignments` repository and the `README.md` file in your `username-labs`
-    repository. Here is how to fix it:
+   ```console
+   cd $HOME/dat320-2019/assignments/lab1
+   vim shell-answers.md
+   # make your edits and save
+   git add shell-answers.md
+   git commit
+   # This will open an editor for you to write a commit message
+   # Use for example "Implemented Assignment 1"
+   git push
+   ```
 
-    ```console
-    $ git push labs
-    ...
-    ! [rejected]        master -> master (fetch first)
-    error: failed to push some refs to 'git@github.com:dat320-2019/username-labs.git'
-    ...
-    $ git pull labs master
-    ...
-    Auto-merging README.md
-    CONFLICT (add/add): Merge conflict in README.md
-    Automatic merge failed; fix conflicts and then commit the result.
-    ...
-    $ cd $HOME/dat320-2019/assignments
-    $ vi README.md
-    // Remove everything in the file, then add for example "username-labs" to the file.
-    // Save and exit.
-    $ git add README.md
-    $ git commit
-    $ // Use the existing (merge) commit message. Save and exit.
-    $ git push labs
-    // Your push should now complete successfully.
-    // You may check that your changes are reflected on GitHub through the GitHub web interface.
-    //If you still get an error like "fatal: Exiting because of an unresolved conflict." use the following command
-    $ git pull --allow-unrelated-histories labs master
-    $ git add README.md
-    $ git commit
-    $ git push labs
-    ```
+   Once you have pushed a change to GitHub, Autograder's built-in Continuous Integration
+   system will pick up your code and run our tests on them.
 
-9. Autograder will now build and run a test suite on the code you submitted.
+10. Autograder will now build and run a test suite on the code you submitted.
     You can check the output by going to the [Autograder web
     interface](http://ag.itest.run/). The results (build log) should be
     available under "Individual - lab1". Note that the results shows output
     for all the tests in current lab assignment. You will want to focus on the
     output for the specific test results related to the task you're working on.
 
-10. Repeat step 8 for the three sets of answers.
-
-11. If some of the autograder tests fail, you may make changes to your code/answers.
-
-12. Push your changes using `git push labs`. You should be able to view your
-    results in the Autograder web interface as described earlier.
+11. If some of the autograder tests fail, you may make changes to your code/answers
+    as many times as you like up until the deadline. Changes after the deadline
+    will count against the slip days.
 
 ## Lab Approval
 
