@@ -101,12 +101,13 @@ This section give step-by-step instructions on how to submit assignments.
    be able to tell you what you should be doing with your working copy.
 
 5. When working with git you typically iterate between the following steps:
-   a. Edit files
-   b. `git status` (check to see which files have changed)
-   c. `git add <edited files>`
-   d. `git status` (check that all intended files have been added to the staging area.)
-   e. `git commit`
-   f. `git status` (check that changes have been committed.)
+
+    1. Edit files
+    2. `git status` (check to see which files have changed)
+    3. `git add <edited files>`
+    4. `git status` (check that all intended files have been added to the staging area.)
+    5. `git commit`
+    6. `git status` (check that changes have been committed.)
 
 6. You may iterate over the steps in Step 5 many times. But eventually,
    you will want to push you changes to GitHub with the following command:
