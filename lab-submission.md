@@ -110,7 +110,7 @@ This section give step-by-step instructions on how to submit assignments.
     6. `git status` (check that changes have been committed.)
 
 6. You may iterate over the steps in Step 5 many times. But eventually,
-   you will want to push you changes to GitHub with the following command:
+   you will want to push your changes to GitHub with the following command:
 
    ```console
    git push
