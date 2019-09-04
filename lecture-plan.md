@@ -1,5 +1,5 @@
-	W	|	M			|	D		|	Ch	|	Monday									|	Tuesday				|	Ch	|	Wednesday								|	Deadlines	|	Comment**	|
---------|---------------|-------	|-------|-------------------------------------------|-----------------------|-------|-------------------------------------------|---------------|---------------|
+W		|	M			|	D		|	Ch	|	Monday									|	Tuesday				|	Ch	|	Wednesday								|	Deadlines	|	Comment		|
+--------|---------------|-----------|-------|-------------------------------------------|-----------------------|-------|-------------------------------------------|---------------|---------------|
 **34**	|	**Aug**		|	**19**	|	2	|	Introduction to Operating Systems		|	C Introduction		|	5	|	Process API								|				|				|
 		|				|			|	4	|	Abstraction: The Process 				|						|	6	|	Mechanism: Limited Direct Execution		|				|				|
 **35**	|	**Aug**		|	**26**	|	7	|	Scheduling: Introduction 				|						|	9	|	Scheduling: Proportional Share			|				|				|
