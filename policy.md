@@ -49,7 +49,7 @@ Note: While we prefer that you get approval for each lab on time, it is
 ok to make arrangements to get the in-lab approval at a later date.
 Please contact the TAs to make different arrangements.
 
-**Be adviced that it is the date on your lab's submission as viewed on GitHub that counts towards the slip days.**
+**Be advised that it is the date on your lab's submission as viewed on GitHub that counts towards the slip days.**
 
 ## Labs
 
