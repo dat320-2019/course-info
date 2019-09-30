@@ -10,5 +10,10 @@ Chapters 36 and 37 are defined as *read on your own* and will *not* be subject t
 
 Syllabus also include:
 - published slides and code snippets available on [course-info](https://github.com/dat320-2019/course-info/)
-- security related videos and
+- various videos and corresponding slides (see below) and
 - lab exercises 1-7.
+
+Videos:
+* [Buffer Overflow (17:30)](https://youtu.be/1S0aBV-Waeo)
+* [Spectre Attack Explained (3:41)](https://youtu.be/q3-xCvzBjGs)
+* [Go Concurrency Patterns (51:26)](https://youtu.be/f6kdp27TYZs) ([slides](https://talks.golang.org/2012/concurrency.slide#1))
