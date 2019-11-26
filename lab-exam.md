@@ -22,7 +22,7 @@ Exact day and time will be provided in a separate schedule.
 
 1. Prepare your code editor on your laptop, with the relevant files open to ease navigation between the different parts of your code.
 
-2. Please arrive ten minutes before your scheduled time and wait outside the room 423f. We will come and fetch you when it is your time.
+2. Please arrive ten minutes before your scheduled time and wait outside the exam room (to be announced before the exam). We will come and fetch you when it is your time.
 
 3. The examination is expected to take about 10 minutes. Since we have limited time, it is very important that you don't waste your time fiddling with code editors and navigation. We recommend that you practice showing and explaining your code before you arrive.
 
