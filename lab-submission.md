@@ -45,24 +45,21 @@ Follow the steps below to register and sign up for the course on Autograder.
    account for only this (and other) courses if you do not want Autograder to
    access your personal one with the requested permissions.
 
-## Signing up for the course
+## Signing up for a course
 
-1. Click the Courses menu item.
+1. Click the Plus (+) menu and select “Join course”. Available courses will be listed.
 
-2. In the Courses menu select “Join a course”. Available courses will be listed.
+2. Find the course and click Enroll.
 
-3. Find the course “dat320-YEAR” and click Sign up.
+3. Wait for the teaching staff to confirm your Autograder registration.
 
-4. Read through and accept the terms. You will then be invited to the
-   organization "dat320-YEAR" on GitHub.
+4. You will then be invited to the course organization on GitHub.
+   An invitation will be sent to the email address associated with your GitHub account.
+   Accept the invitation using the received email.
+   Note that emails from GitHub can sometimes take a while to arrive.
+   TODO(meling): provide instructions for bypassing the email.
 
-5. An invitation will be sent to the email address registered with your GitHub
-   account. Accept the invitation using the received email.
-
-6. Wait for the teaching staff to verify your Autograder-registration.
-
-7. You will get your own repository in the "dat320-YEAR" organization on GitHub
-   after your registration is verified.
+5. Once you have accepted the invitation, you will get your own repository under the course organization on GitHub.
 
 ## Instructions for submitting a lab assignment
 
@@ -92,6 +89,23 @@ This section give step-by-step instructions on how to submit assignments.
    ```
 
    (you may be asked for username and password on GitHub above.)
+
+   **Troubleshooting:** If the `git pull` command above results in:
+
+   ```console
+   fatal: refusing to merge unrelated histories
+   ```
+
+   This means that you have made changes to your `username-labs` repository.
+   To resolve this problem you can instead run:
+
+   ```console
+   git pull --allow-unrelated-histories labs master
+   ```
+
+   However, if your changes are incompatible with the changes made in the
+   `assignments` repository, then you may get a merge conflict, which requires
+   that you manually resolve that conflict and commit and push your change.
 
 3. To avoid having to type your password every time, follow these
    [steps](https://github.com/dat320-2019/course-info/blob/master/github-ssh.md)
@@ -170,9 +184,9 @@ This section give step-by-step instructions on how to submit assignments.
 10. Autograder will now build and run a test suite on the code you submitted.
     You can check the output by going to the [Autograder web
     interface](http://ag.itest.run/). The results (build log) should be
-    available under "Individual - lab1". Note that the results shows output
-    for all the tests in current lab assignment. You will want to focus on the
-    output for the specific test results related to the task you're working on.
+    available under "Labs -> lab1".
+    Note that the results shows output for all the tests in current lab assignment.
+    You will want to focus on the output for the specific test results related to the task you're working on.
 
 11. If some of the autograder tests fail, you may make changes to your code/answers
     as many times as you like up until the deadline. Changes after the deadline
